@@ -1,0 +1,23 @@
+
+Redis windows Link:
+Main Link:https://github.com/MicrosoftArchive/redis/
+
+Windows Download link:
+https://github.com/MicrosoftArchive/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.msi
+
+Redis on cloud:
+https://redis.com/
+
+
+Install using Homebrew for MAC:
+brew install redis-stack
+
+Path Set: export PATH=/usr/local/Caskroom/redis-stack-server/<VERSION>/bin:$PATH
+
+
+
+Redis: Docker:
+https://redis.io/docs/stack/get-started/install/docker/
+docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
+
+
