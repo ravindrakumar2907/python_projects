@@ -1,0 +1,20 @@
+20:28:48,292 root INFO Starting app
+20:28:48,367 werkzeug INFO  * Running on http://localhost:5000 (Press CTRL+C to quit)
+20:28:48,371 werkzeug INFO  * Restarting with stat
+20:28:49,276 root INFO Starting app
+20:28:49,301 werkzeug WARNING  * Debugger is active!
+20:28:49,328 werkzeug INFO  * Debugger PIN: 704-363-694
+20:30:09,667 RestAPP INFO get all employee
+20:30:09,670 werkzeug INFO 127.0.0.1 - - [29/Jun/2022 20:30:09] "GET /getAllEmployee HTTP/1.1" 200 -
+20:30:13,201 RestAPP INFO register_employee method
+20:30:13,202 RestAPP DEBUG employee has been registered successfully.
+20:30:13,207 werkzeug INFO 127.0.0.1 - - [29/Jun/2022 20:30:13] "POST /registerEmployee HTTP/1.1" 200 -
+20:30:15,783 RestAPP INFO update_employee method
+20:30:15,784 RestAPP DEBUG employee has been updated successfully.
+20:30:15,785 werkzeug INFO 127.0.0.1 - - [29/Jun/2022 20:30:15] "PUT /updateEmployee/ravi@gmail.com HTTP/1.1" 200 -
+20:30:18,894 RestAPP INFO delete_employee method
+20:30:18,894 RestAPP DEBUG employee has been deleted successfully.
+20:30:18,895 werkzeug INFO 127.0.0.1 - - [29/Jun/2022 20:30:18] "DELETE /deleteEmployee/pratik@gmail.com HTTP/1.1" 200 -
+20:30:21,746 RestAPP INFO get_employee method
+20:30:21,748 RestAPP DEBUG employee found
+20:30:21,749 werkzeug INFO 127.0.0.1 - - [29/Jun/2022 20:30:21] "GET /getEmployee/mahesh@gmail.com HTTP/1.1" 200 -
