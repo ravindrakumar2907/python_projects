@@ -54,7 +54,11 @@ input[type=submit]:hover {
         <li><a href = "{{url_for('services')}}">Services</a></li>
         <li><a href = "{{url_for('contact')}}">Contact</a></li>
         <li><a href = "{{url_for('feedback')}}">Feedback</a></li>
-        <li><a href = "{{url_for('login')}}">Login</a></li>
+        {% if session['email-id'] %}
+            <li><a href = "{{url_for('logout')}}">Logout</a></li>
+        {% else %}
+            <li><a href = "{{url_for('login')}}">Login</a></li>
+        {% endif %}
       </ul>
     </div>
   </nav>

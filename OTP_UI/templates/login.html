@@ -21,23 +21,27 @@
         <li><a href = "{{url_for('services')}}">Services</a></li>
         <li><a href = "{{url_for('contact')}}">Contact</a></li>
         <li><a href = "{{url_for('feedback')}}">Feedback</a></li>
-        <li><a href = "{{url_for('login')}}">Login</a></li>
+        {% if session['email-id'] %}
+            <li><a href = "{{url_for('logout')}}">Logout</a></li>
+        {% else %}
+            <li><a href = "{{url_for('login')}}">Login</a></li>
+        {% endif %}
       </ul>
     </div>
   </nav>
   <!-- Here my login form will have all details -->
 	<div class="container">
-		<div class="error"></div>
-		<form id="frm-mobile-verification">
+
+		<form id="frm-mobile-verification" action="/slogin" method="post">
 			<div class="form-heading">Login</div>
+            <div class="error">{{message}}</div>
 			<div class="form-row">
-				<input type="text" id="username" class="form-input"
+				<input type="text" id="username" name="username" class="form-input"
 					placeholder="Enter the username">
-              <input type="password" id="password" class="form-input"
+              <input type="password" id="password" name="password" class="form-input"
 					placeholder="Enter the password">
 			</div>
-			<input type="submit" class="btnSubmit" value="Login"
-				onClick="sendOTP();">
+			<input type="submit" class="btnSubmit" value="Login" />
             <a href = "{{url_for('signup')}}">Sign Up here</a>
 		</form>
 	</div>
