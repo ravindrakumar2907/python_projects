@@ -27,10 +27,11 @@
     </div>
   </nav>
   	<div class="container">
-        <span>{{message}}</span>
+
         <form method = "post" action = "/signup_submit" id="registration_form">
             <table>
                 <caption><b>Sign Up</b></caption>
+                 <span>{{msg}}</span>
                 <tr><td>First Name</td><td><input type = 'name' name = 'first_name' class="form-input"></td></tr>
                 <tr><td>Last Name</td><td><input type = 'name' name = 'last_name' class="form-input"></td></tr>
                 <tr><td>Email Id</td><td><input type = 'email' name = 'email' class="form-input"></td></tr>

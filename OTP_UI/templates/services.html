@@ -7,6 +7,11 @@
     <!------<title> Website Layout | CodingLab</title>------>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <script>
+        function demoRedirect(){
+            window.location.href="http://192.168.0.4:5002/demo";
+        }
+    </script>
    </head>
 <body>
   <nav>
@@ -33,8 +38,8 @@
     <div class="title">Create Amazing Website</div>
     <div class="sub_title">Pure HTML & CSS Only</div>
     <div class="btns">
-      <button>Learn More</button>
-      <button>Subscribe</button>
+      <button>Learn More </button>
+      <button onclick="demoRedirect();">OTP Demo</button>
     </div>
   </div>
 </body>

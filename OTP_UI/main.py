@@ -134,15 +134,17 @@ def submit_login():
                 return redirect(url_for("home"))
             else:
                 message = "Plz check username and password"
-                return render_template("login.html", result=message)
+                return render_template("login.html", error=message)
         else:
             message = "Plz check username and password"
-            return render_template("login.html", result=message)
+            return render_template("login.html", error=message)
     return render_template("login.html")
 
 
 @app.route("/signup_submit", methods=["POST"])
 def signup_submit():
+    status = "FAILED"
+    message = ""
     if request.method == "POST":
         if request.form:
             first_name = request.form["first_name"]
@@ -160,14 +162,15 @@ def signup_submit():
                 user = User(first_name, last_name, email, password, mobile_no, d_o_b, city, country)
                 db.session.add(user)
                 db.session.commit()
+                status = "SUCCESS"
                 message = "You have registered successfully"
-                return render_template("signup.html", result=message)
+                return render_template("msg.html", status=status, msg=message)
             else:
                 message = "Check the password, its not matching"
-                return render_template("signup.html", result=message)
+                return render_template("signup.html", status=status, msg=message)
         else:
             message = "Plz enter correct details"
-            return render_template("signup.html", result=message)
+            return render_template("signup.html", status=status, msg=message)
     return render_template("signup.html")
 
 
@@ -180,4 +183,9 @@ sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed
 sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user_details.email
 https://stackoverflow.com/questions/22024661/jinja2-template-not-rendering-if-elif-else-statement-properly
 https://stackoverflow.com/questions/42013067/how-to-access-session-variables-in-jinja-2-flask
+https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm
+"""
+
+"""
+https://exotel.com/otp-service-provider/
 """

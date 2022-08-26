@@ -12,7 +12,18 @@ https://www.codinglabweb.com/2020/12/create-website-in-html-css-only-design.html
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"  type="text/css" rel="stylesheet" >
 	  <link href="{{ url_for('static', filename='css/demo.css') }}" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-   </head>
+    <script>
+        function enabledOnKeyUp(){
+            var sendOTPBtn = document.getElementById("sendOTPBtn");
+            if(){
+
+            }else{
+                document.getElementById("myBtn").disabled = true;
+            }
+        }
+
+    </script>
+  </head>
 <body>
   <nav>
     <div class="menu">
@@ -42,8 +53,8 @@ https://www.codinglabweb.com/2020/12/create-website-in-html-css-only-design.html
 				<input type="number" id="mobile" class="form-input"
 					placeholder="Enter the 10 digit mobile">
 			</div>
-			<input type="button" class="btnSubmit" value="Send OTP"
-				onClick="sendOTP();">
+			<input type="button" id="sendOTPBtn" class="btnSubmit" value="Send OTP"
+				onClick="sendOTP();" onkeyup="enabledOnKeyUp();" disabled>
 		</form>
 	</div>
 
