@@ -40,21 +40,18 @@ def updateBook(request):
     else:
         return JsonResponse({'message': 'invalid request check title params'})
     print("title value is " + str(title))
-    #Logger.debug("title value is " + str(title), exc_info=1)
-    if title:
-        try:
-            book_data1 = Books.objects.filter(title=title)
-        except Books.DoesNotExist:
-            return JsonResponse({'message': 'The book does not exist'}, status=status.HTTP_404_NOT_FOUND)
-    else:
-        return JsonResponse({'message': 'invalid request check title params'})
     
+    try:
+        book_data1 = Books.objects.get(title=title)
+    except Books.DoesNotExist:
+        return JsonResponse({'message': 'The Book does not exist'}, status=status.HTTP_404_NOT_FOUND)
+
     book_data = JSONParser().parse(request)
     book_serializer = BooksSerializer(book_data1, data=book_data)
     if book_serializer.is_valid():
-        update_response = {"status": "success", "data":book_serializer.data}
+        add_response = {"status": "success"}
         book_serializer.save()#update
-        return JsonResponse(update_response)
+        return JsonResponse(book_serializer.data)
     return JsonResponse(book_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['DELETE'])
