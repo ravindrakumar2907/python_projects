@@ -1,0 +1,196 @@
+https://www.djangoproject.com/
+
+Projects Types:
+1. WEB Base
+html + Django
+
+2. API (Rest Response)
+Django
+
+Online Store
+
+1. Install python
+command: python --version
+Python 3.10.2
+
+2. Check pip --version
+
+3. pip3 install pipenv
+python.exe -m pip install --upgrade pip
+
+4. VS code
+
+5. create a new folder for application and go to folder
+
+6. pipenv install django
+addition to this pipfile and pipfile.lock
+
+7. activate 
+pipenv shell
+
+django-admin -- utitlty for installing projects
+django-admin startproject <project_name>
+django-admin startproject .
+
+-__init__.py  this is package
+- settings.py // project settings
+-url.py // url for application
+-asgi.py //used for deployement
+-wsgi.py //used for deployement
+
+manage.py //wrapper around django admin // its takes seeting for this project
+
+django-admin runserver
+
+python manage.py  runserver 9000// 8000 deafult to run server
+
+
+
+
+
+
+##################
+D:\python\Django>python --version
+Python 3.10.6
+
+D:\python\Django>pip3 --version
+pip 22.2.1 from C:\Users\PC\AppData\Local\Programs\Python\Python310\lib\site-packages\pip (python 3.10)
+
+virtaul env for dependecy 
+pip3 install pipenv
+
+vs-code for code -dev.
+python lib
+
+
+First app.
+create a folder and give name
+store-front
+Create Project: pipenv install django
+
+Virtualenv location: C:\Users\PC\.virtualenvs\workspace-X5dvmU29
+ Creating virtual environment...
+  creator CPython3Windows(dest=C:\Users\PC\.virtualenvs\workspace-X5dvmU29, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=C:\Users\PC\AppData\Local\pypa\virtualenv)
+    added seed packages: pip==22.2.2, setuptools==65.3.0, wheel==0.37.1
+  activators BashActivator,BatchActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+
+
+#activate virtaul env
+pipenv shell
+
+# create prject 
+django-admin
+
+workspace-X5dvmU29) D:\python\Django\workspace>django-admin
+
+Type 'django-admin help <subcommand>' for help on a specific subcommand.
+
+Available subcommands:
+
+[django]
+    check
+    compilemessages
+    createcachetable
+    dbshell
+    diffsettings
+    dumpdata
+    flush
+    inspectdb
+    loaddata
+    makemessages
+    makemigrations
+    migrate
+    optimizemigration
+    runserver
+    sendtestemail
+    shell
+    showmigrations
+    sqlflush
+    sqlmigrate
+    sqlsequencereset
+    squashmigrations
+    startapp
+    startproject
+    test
+    testserver
+Note that only Django core commands are listed as settings are not properly configured (error: Requested setting INSTALLED_APPS, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.).
+
+command:
+django-admin startproject storefront
+
+django-admin startproject storefront . # not to create again new folder and curent dir 
+
+
+django-admin runserver
+
+python manage.py  runserver 9000// 8000 deafult to run server
+
+(workspace-X5dvmU29) D:\python\Django\workspace>python manage.py  runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+September 06, 2022 - 01:10:04
+Django version 4.1.1, using settings 'storefront.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+
+http://127.0.0.1:8000/
+
+
+Django has contain on apps.
+# Application definition
+
+INSTALLED_APPS
+
+#Create app
+python manage.py startapp playground
+
+python manage.py startapp store
+
+python manage.py startapp tags
+
+#debugging
+
+https://django-debug-toolbar.readthedocs.io/en/latest/
+
+## Models create database related models
+python manage.py makemigrations  playground
+python manage.py migrate
+
+#sql data insert:
+py manage.py shell
+
+from playground.models import Members
+ Members.objects.all()
+  member = Members(firstname='Emil', lastname='Refsnes')
+  member.save()
+  Members.objects.all().values()
+  
+member1 = Members(firstname='Tobias', lastname='Refsnes')
+member2 = Members(firstname='Linus', lastname='Refsnes')
+member3 = Members(firstname='Lene', lastname='Refsnes')
+member4 = Members(firstname='Stale', lastname='Refsnes')
+members_list = [member1, member2, member3, member4]
+for x in members_list:
+  x.save()
+Members.objects.all().values()
+
+mysql:
+pip install mysql-python
+pip install mysqlclient
+pip install pymysql
+https://stackoverflow.com/questions/24462007/how-to-deal-with-this-error-1049-unknown-database-users-ohyunjun-work-astra
+
+http://localhost:8001/books/hc/
+
+https://stackoverflow.com/questions/5508888/matching-query-does-not-exist-error-in-django
+https://www.geeksforgeeks.org/filter-data-in-django-rest-framework/
+https://stackoverflow.com/questions/56374741/django-model-object-is-not-iterable
+
+
